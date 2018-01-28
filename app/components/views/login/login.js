@@ -22,7 +22,7 @@ export default class LoginScreen extends Component {
           <Image style={styles.logo} source={require('../images/logo.png')}/>
 
           <Text style={styles.title}>Welcome to MyPT</Text>
-          <Text style={styles.description}>Connecting you to your doctor</Text>
+          <Text style={styles.description}>Connecting you to your therapist</Text>
         </View>
         <View style={styles.container}>
           <LoginForm />
