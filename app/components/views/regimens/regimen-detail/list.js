@@ -10,7 +10,7 @@ type Props = TopLevelViewPropsType & {
 
 export class ExercisesList extends React.PureComponent<Props> {
 
-  _keyExtractor = (item, index) => item.id;
+  _keyExtractor = (item) => item.name;
 
   _onPressItem = (exercise: ExerciseType) => {
     // updater functions are preferred for transactional updates

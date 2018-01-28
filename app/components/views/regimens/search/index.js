@@ -6,7 +6,7 @@ import * as defaultData from '../../../../../docs/regimens.json'
 import {RegimensSearchList} from './list'
 import * as c from '../../../colors'
 import type {RegimenType} from '../types'
-// import {RegimenSearchRow} from './row'
+import {RegimensSearchRow} from './row'
 
 // type Props = {
 //   allRegimens: Array<RegimenType>,
@@ -30,7 +30,7 @@ export default class RegimenSearchView extends React.PureComponent<State> {
   // }
 
   state = {
-    results: defaultData.data,
+    results: [],
     allRegimens: defaultData.data,
   }
 
@@ -66,14 +66,15 @@ export default class RegimenSearchView extends React.PureComponent<State> {
   //         resolve();
   //     });
   // }
-  // onChangeText = (text) => {
-  //   // console.log(text)
-  //   let searchResults = this.state.allRegimens.filter(regimen => (
-  //     regimen.name.includes(text)
-  //   ))
-  //   console.log(searchResults)
-  //   this.setState({results: searchResults})
-  // }
+  onChangeText = (text) => {
+    // console.log(text)
+    let query = text.toLowerCase()
+    let searchResults = this.state.allRegimens.filter(regimen => (
+      regimen.name.toLowerCase().includes(query) || regimen.description.toLowerCase().includes(query)
+    ))
+    // console.log(searchResults)
+    this.setState({results: searchResults})
+  }
   //
   // // Important: You must return a Promise
   // afterFocus = () => {
@@ -83,13 +84,20 @@ export default class RegimenSearchView extends React.PureComponent<State> {
   //     });
   // }
 
-  // _renderItem = ({item}: {item: RegimenType}) => (
-  //   <RegimensSearchRow
-  //     regimen={item}
-  //     onPressItem={this._onPressItem}
-  //     title={item.name}
-  //   />
-  // )
+  _onPressItem = (regimen: RegimenType) => {
+    // updater functions are preferred for transactional updates
+    this.props.navigation.navigate('RegimenDetail', {regimen: regimen})
+  }
+
+  _renderItem = ({item}: {item: RegimenType}) => (
+    <RegimensSearchRow
+      regimen={item}
+      onPressItem={this._onPressItem}
+      title={item.name}
+    />
+  )
+
+  _keyExtractor = (item) => item.name
 
   render() {
     // inside your render function
@@ -103,11 +111,12 @@ export default class RegimenSearchView extends React.PureComponent<State> {
 
         />
         <View style={styles.container}>
-          <RegimensSearchList
-            data={ results }
-            navigation={this.props.navigation}
-          >
-          </RegimensSearchList>
+          <FlatList
+            data ={this.state.results}
+            extraData = {this.state}
+            keyExtractor={this._keyExtractor}
+            renderItem={this._renderItem}
+          />
         </View>
 
       </View>

@@ -11,7 +11,7 @@ type Props = TopLevelViewPropsType & {
 
 export class RegimensSearchList extends React.PureComponent<Props> {
 
-  _keyExtractor = (item, index) => item.id;
+  _keyExtractor = (item) => item.name;
 
   _onPressItem = (regimen: RegimenType) => {
     // updater functions are preferred for transactional updates
