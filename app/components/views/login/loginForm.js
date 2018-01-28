@@ -26,6 +26,7 @@ export default class LoginForm extends React.PureComponent<Props> {
       barStyle="light-content"
       />
         <TextInput
+          underlineColorAndroid="transparent"
           placeholder="username"
           placeholderTextColor="rgba(255,255,255,1)"
           returnKeyType="next"
@@ -35,6 +36,7 @@ export default class LoginForm extends React.PureComponent<Props> {
           autoCorrect={false}
           style={styles.input}/>
         <TextInput
+          underlineColorAndroid="transparent"
           placeholder="password"
           placeholderTextColor="rgba(255,255,255,1)"
           returnKeyType="go"
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   buttonContainer: {
+    borderRadius: 10,
     backgroundColor: '#63666A',
     paddingVertical: 15
   },
