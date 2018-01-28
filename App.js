@@ -26,9 +26,6 @@ const RootTabs = TabNavigator({
   Messenger: {
     screen: MessengerScreen,
   },
-  Login: {
-    screen: LoginScreen,
-  },
 }, {
   tabBarPosition: 'bottom',
   tabBarOptions: {
@@ -37,6 +34,7 @@ const RootTabs = TabNavigator({
 });
 
 const BaseNav = StackNavigator({
+  Login: { screen: LoginScreen },
   Home: { screen: RootTabs},
   RegimenDetail: { screen: RegimenDetailView },
   ExerciseDetail: { screen: ExerciseDetailView },
