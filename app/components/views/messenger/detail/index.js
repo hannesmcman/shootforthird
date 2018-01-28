@@ -6,7 +6,7 @@ type Props = {
   navigation: {state: {params: {contact: ContactType}}},
 }
 
-const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 75
+const keyboardVerticalOffset = Platform.OS === 'ios' ? 70 : 75
 
 export default class ContactDetailView extends React.PureComponent<Props> {
   static navigationOptions = ({navigation}: any) => {
@@ -33,7 +33,8 @@ export default class ContactDetailView extends React.PureComponent<Props> {
             padding = {5}
             margin = {5}
             underlineColorAndroid ='transparent'
-            value="Type your question here"
+            placeholder="Type your question here"
+            returnKeyType="go"
             style = {{
               fontSize: 15,
               borderStyle: 'solid',

@@ -4935,6 +4935,10 @@ react-native-maps@0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.19.0.tgz#ce94fad1cf360e335cb4338a68c95f791e869074"
 
+react-native-progress-circle@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-progress-circle/-/react-native-progress-circle-2.0.0.tgz#26c883cda380690a50baa446ee39a48d31cfabce"
+
 react-native-safe-module@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-module/-/react-native-safe-module-1.2.0.tgz#a23824ca24edc2901913694a76646475113d570d"

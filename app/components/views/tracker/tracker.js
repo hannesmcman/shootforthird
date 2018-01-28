@@ -7,6 +7,7 @@ import { Calendar, CalendarList } from 'react-native-calendars'; // 1.5.3
 export default class TrackerScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Tracker',
+    title: 'Progress Tracker',
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
         name={focused ? 'ios-calendar' : 'ios-calendar-outline'}
@@ -70,8 +71,24 @@ export default class TrackerScreen extends React.Component {
             '2018-01-23': {marked: true, dotColor: 'green'},
             '2018-01-24': {marked: true, dotColor: 'orange'},
             '2018-01-25': {marked: true, dotColor: 'green'},
+            '2018-02-04': {marked: true, dotColor: 'green'},
+            '2018-02-05': {marked: true, dotColor: 'orange'},
+            '2018-02-08': {marked: true, dotColor: 'green'},
+            '2018-02-09': {marked: true, dotColor: 'orange'},
+            '2018-02-10': {marked: true, dotColor: 'green'},
+            '2018-02-12': {marked: true, dotColor: 'green'},
+            '2018-02-14': {marked: true, dotColor: 'green'},
+            '2018-02-15': {marked: true, dotColor: 'green'},
+            '2018-02-16': {marked: true, dotColor: 'green'},
+            '2018-02-18': {marked: true, dotColor: 'orange'},
+            '2018-02-19': {marked: true, dotColor: 'green'},
+            '2018-02-20': {marked: true, dotColor: 'green'},
+            '2018-02-22': {marked: true, dotColor: 'orange'},
+            '2018-02-23': {marked: true, dotColor: 'green'},
+            '2018-02-24': {marked: true, dotColor: 'orange'},
+            '2018-02-25': {marked: true, dotColor: 'green'},
           }}
-        />  
+        />
       </View>
     );
   }
