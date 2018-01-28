@@ -6,6 +6,7 @@ import HomeScreen  from './app/components/views/home/home';
 import RegimensScreen  from './app/components/views/regimens/regimens';
 import MessengerScreen  from './app/components/views/messenger/messenger';
 import TrackerScreen  from './app/components/views/tracker/tracker';
+import LoginScreen from './app/components/views/login/login';
 import RegimenDetailView from './app/components/views/regimens/regimen-detail'
 import ExerciseDetailView from './app/components/views/regimens/regimen-detail/exercise-detail'
 import ContactDetailView from './app/components/views/messenger/detail'
@@ -24,6 +25,9 @@ const RootTabs = TabNavigator({
   },
   Messenger: {
     screen: MessengerScreen,
+  },
+  Login: {
+    screen: LoginScreen,
   },
 }, {
   tabBarPosition: 'bottom',
