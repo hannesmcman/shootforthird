@@ -1,39 +1,39 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native'
-import {ExercisesRow, ListSeparator} from './row'
+import {RegimensSearchRow, ListSeparator} from './row'
 import type {TopLevelViewPropsType} from '../../types'
-import type {ExerciseType} from '../types'
+import type {RegimenType} from '../types'
 
 type Props = TopLevelViewPropsType & {
-  data: Array<ExerciseType>,
+  data: Array<RegimenType>,
+  extraData: Array<RegimentType>,
 }
 
-export class ExercisesList extends React.PureComponent<Props> {
+export class RegimensSearchList extends React.PureComponent<Props> {
 
   _keyExtractor = (item) => item.name;
 
-  _onPressItem = (exercise: ExerciseType) => {
+  _onPressItem = (regimen: RegimenType) => {
     // updater functions are preferred for transactional updates
-    this.props.navigation.navigate('ExerciseDetail', {exercise: exercise})
+    this.props.navigation.navigate('RegimenDetail', {regimen: regimen})
   };
 
-  _renderItem = ({item}: {item: ExerciseType}) => (
-    <ExercisesRow
-      exercise={item}
+  _renderItem = ({item}: {item: RegimenType}) => (
+    <RegimensSearchRow
+      regimen={item}
       onPressItem={this._onPressItem}
       title={item.name}
     />
   );
 
   componentDidMount() {
-    // console.log(this.props)
+    console.log(this.props)
   }
 
   render() {
     return (
       <FlatList
-        data={this.props.data}
-        extraData={this.state}
+        data ={this.props.data}
         ItemSeparatorComponent={ListSeparator}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}

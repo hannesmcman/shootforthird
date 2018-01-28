@@ -2,6 +2,7 @@
 
 export type RegimenType = {
   name: string,
+  description: string,
   doctorAssigned: boolean,
   doctor?: string,
   startDate: string,

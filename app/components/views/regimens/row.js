@@ -13,7 +13,7 @@ export class RegimensRow extends React.PureComponent<Props> {
   };
 
   componentDidMount() {
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   render() {
