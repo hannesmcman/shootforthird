@@ -55,9 +55,11 @@ export default class LoginForm extends React.PureComponent<Props> {
 
 const styles = StyleSheet.create({
   container: {
+    borderRadius: 10,
     padding: 20
   },
   input: {
+    borderRadius: 10,
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.3)',
     marginBottom: 15,
