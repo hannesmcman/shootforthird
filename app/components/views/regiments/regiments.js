@@ -1,9 +1,11 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, Button} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {RegimentsList} from './list'
 
 export default class RegimentsScreen extends React.Component {
   static navigationOptions = {
+    headerRight: <Button title="info" onPress={() => {}}/>,
     tabBarLabel: 'Regiments',
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
@@ -17,7 +19,8 @@ export default class RegimentsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Regiments Screen</Text>
+        <RegimentsList>
+        </RegimentsList>
       </View>
     );
   }

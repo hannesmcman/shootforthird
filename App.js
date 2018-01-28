@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeScreen  from './app/components/home/home';
-import RegimentsScreen  from './app/components/regiments/regiments';
-import MessengerScreen  from './app/components/messenger/messenger';
-import TrackerScreen  from './app/components/tracker/tracker';
+import HomeScreen  from './app/components/views/home/home';
+import RegimentsScreen  from './app/components/views/regiments/regiments';
+import MessengerScreen  from './app/components/views/messenger/messenger';
+import TrackerScreen  from './app/components/views/tracker/tracker';
 
 
 const RootTabs = TabNavigator({
@@ -21,7 +21,13 @@ const RootTabs = TabNavigator({
   Messenger: {
     screen: MessengerScreen,
   },
+}, {
+  tabBarPosition: 'bottom',
 });
 
+const BaseNav = StackNavigator({
+  Home: { screen: RootTabs},
+})
 
-export default RootTabs;
+
+export default BaseNav;
