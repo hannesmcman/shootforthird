@@ -6,6 +6,7 @@ import * as defaultData from '../../../../docs/regimens.json'
 import type {RegimenType} from './types'
 import {Button} from 'react-native-elements'
 import type {TopLevelViewPropsType} from '../types'
+import * as c from '../../colors'
 
 type Props = TopLevelViewPropsType
 
@@ -15,11 +16,12 @@ type State = {
 
 export default class RegimensScreen extends React.PureComponent<Props, State> {
   static navigationOptions = ({navigation}: any) => {
-    console.log(navigation)
+    // console.log(navigation)
     return {
       title: "Regimens",
       headerRight: (
         <Button
+          buttonStyle={{paddingRight: 0}}
           iconRight={{name: 'search', type: 'ionicons', color: 'black', size: 30}}
           color='black'
           backgroundColor='transparent'
@@ -60,5 +62,6 @@ export default class RegimensScreen extends React.PureComponent<Props, State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: c.platinum,
   },
 })

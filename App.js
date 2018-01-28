@@ -10,6 +10,7 @@ import RegimenDetailView from './app/components/views/regimens/regimen-detail'
 import ExerciseDetailView from './app/components/views/regimens/regimen-detail/exercise-detail'
 import ContactDetailView from './app/components/views/messenger/detail'
 import RegimenSearchView from './app/components/views/regimens/search/'
+import * as c from './app/components/colors'
 
 const RootTabs = TabNavigator({
   Home: {
@@ -26,6 +27,9 @@ const RootTabs = TabNavigator({
   },
 }, {
   tabBarPosition: 'bottom',
+  tabBarOptions: {
+    activeTintColor: c.crayola,
+  }
 });
 
 const BaseNav = StackNavigator({

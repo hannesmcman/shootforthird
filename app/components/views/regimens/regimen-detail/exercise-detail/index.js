@@ -1,6 +1,7 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import type {ExerciseType} from '../../types'
+import * as c from '../../../../colors'
 
 type Props = {
   navigation: {state: {params: {exercise: ExerciseType}}},
@@ -17,10 +18,30 @@ export default class RegimenDetailView extends React.PureComponent<Props> {
   render() {
     const {exercise} = this.props.navigation.state.params
     return (
-      <View>
-        <Text>{exercise.description}</Text>
-        <Text>{exercise.reps}</Text>
+      <View style={styles.container}>
+        {exercise.reps ? (
+          <Text style={styles.reps}>
+            {exercise.reps} Reps
+          </Text>
+        ): null}
+
+        <Text style={styles.description}>{exercise.description}</Text>
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: c.platinum,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  description: {
+    fontSize: 20,
+  },
+  reps: {
+    fontSize: 50,
+  },
+})

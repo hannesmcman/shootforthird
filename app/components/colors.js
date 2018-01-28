@@ -117,6 +117,12 @@ export const mud = 'rgb(70, 45, 29)'
 export const sienna = 'rgb(160, 82, 45)'
 export const dust = 'rgb(236, 214, 197)'
 
+export const platinum = '#E1E6E1'
+export const flame = '#E15634'
+export const crayola = '#FF7733'
+export const orangeSoda = '#F85A3E'
+export const crimsonOrange = '#E3170A'
+
 export const tint = mandarin
 
 // MARK: gradients
