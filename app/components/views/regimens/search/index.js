@@ -37,35 +37,22 @@ export default class RegimenSearchView extends React.PureComponent<State> {
   componentDidMount() {
     console.log(this.state)
   }
-  //
-  // renderRow = (item, sectionId, index) => {
-  //   return (
-  //     <TouchableHighlight
-  //       style={{
-  //         height: rowHeight,
-  //         justifyContent: 'center',
-  //         alignItems: 'center'}}
-  //     >
-  //       <Text>{item.name}</Text>
-  //     </TouchableHighlight>
-  //   );
-  // }
-  //
-  // // Important: You must return a Promise
-  // beforeFocus = () => {
-  //     return new Promise((resolve, reject) => {
-  //         console.log('beforeFocus');
-  //         resolve();
-  //     });
-  // }
-  //
+
   // Important: You must return a Promise
-  // onFocus = (text) => {
-  //     return new Promise((resolve, reject) => {
-  //         console.log('onFocus', text);
-  //         resolve();
-  //     });
-  // }
+  beforeFocus = () => {
+      return new Promise((resolve, reject) => {
+          // console.log('beforeFocus');
+          resolve();
+      });
+  }
+
+  //Important: You must return a Promise
+  onFocus = (text) => {
+      return new Promise((resolve, reject) => {
+          // console.log('onFocus', text);
+          resolve();
+      });
+  }
   onChangeText = (text) => {
     // console.log(text)
     let query = text.toLowerCase()

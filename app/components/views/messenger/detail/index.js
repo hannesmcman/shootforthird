@@ -33,7 +33,8 @@ export default class ContactDetailView extends React.PureComponent<Props> {
             padding = {5}
             margin = {5}
             underlineColorAndroid ='transparent'
-            value="Type your question here"
+            placeholder="Type your question here"
+            returnKeyType="go"
             style = {{
               fontSize: 15,
               borderStyle: 'solid',

@@ -5,14 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class LoginScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Login',
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-key' : 'ios-key-outline'}
-        size={26}
-        style={{ color: tintColor }}
-      />
-    ),
+    header: null,
   };
 
   render() {
@@ -25,7 +18,7 @@ export default class LoginScreen extends Component {
           <Text style={styles.description}>Connecting you to your therapist</Text>
         </View>
         <View style={styles.container}>
-          <LoginForm />
+          <LoginForm navigation={this.props.navigation} />
 
         </View>
       </KeyboardAvoidingView>

@@ -1,8 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {StyleSheet, View, StatusBar, TextInput, TouchableOpacity, Text} from 'react-native';
+import {TopLevelViewPropsType} from '../types'
+import {NavigationActions} from 'react-navigation'
 
+type Props = TopLevelViewPropsType
 
-export default class LoginForm extends Component {
+export default class LoginForm extends React.PureComponent<Props> {
+
+  onPress = () => {
+    this._navigateTo('Home')
+  }
+
+  _navigateTo = (routeName: string) => {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName })]
+    })
+    this.props.navigation.dispatch(resetAction)
+  }
+
   render() {
     return(
       <View style={styles.container}>
@@ -27,7 +43,7 @@ export default class LoginForm extends Component {
           ref={(input) => this.passwordInput = input}
           />
 
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.onPress}>
           <Text style={styles.buttonText}>Enter</Text>
         </TouchableOpacity>
       </View>
