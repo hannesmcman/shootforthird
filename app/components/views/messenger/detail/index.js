@@ -6,7 +6,7 @@ type Props = {
   navigation: {state: {params: {contact: ContactType}}},
 }
 
-const keyboardVerticalOffset = Platform.OS === 'ios' ? 40 : 75
+const keyboardVerticalOffset = Platform.OS === 'ios' ? 70 : 75
 
 export default class ContactDetailView extends React.PureComponent<Props> {
   static navigationOptions = ({navigation}: any) => {
