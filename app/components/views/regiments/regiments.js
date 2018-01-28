@@ -16,10 +16,22 @@ export default class RegimentsScreen extends React.Component {
     ),
   };
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <RegimentsList>
+      <View style={{ flex: 1 }}>
+        <RegimentsList
+          data={
+            [
+              {name: 'Sprained Ankle'},
+              {name: 'Tendonitis'},
+            ]
+          }
+          navigation={this.props.navigation}
+        >
         </RegimentsList>
       </View>
     );

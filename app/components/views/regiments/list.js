@@ -1,30 +1,47 @@
+import React from 'react'
+import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native'
+import {RegimentsRow, ListSeparator} from './row'
+import type {TopLevelViewPropsType} from '../../types'
+import type {RegimentType} from './types'
 
-import React from 'react';
-import { View, ListView, StyleSheet, Text } from 'react-native';
+type Props = TopLevelViewPropsType & {
+  data: Array<RegimentType>,
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 20,
-  },
-});
+export class RegimentsList extends React.PureComponent<Props> {
 
-export class RegimentsList extends React.Component {
-  constructor(props) {
-    super(props);
+  _keyExtractor = (item, index) => item.id;
 
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
-    };
+  _onPressItem = (regiment: RegimentType) => {
+    // updater functions are preferred for transactional updates
+    this.props.navigation.navigate('RegimentDetail', {regiment: regiment})
+  };
+
+  _renderItem = ({item}: {item: RegimentType}) => (
+    <RegimentsRow
+      info={item}
+      onPressItem={this._onPressItem}
+      title={item.name}
+    />
+  );
+
+  componentDidMount() {
+    // console.log(this.props)
   }
+
   render() {
     return (
-      <ListView
-        style={styles.container}
-        dataSource={this.state.dataSource}
-        renderRow={(data) => <View><Text>{data}</Text></View>}
+      <FlatList
+        data={this.props.data}
+        extraData={this.state}
+        ItemSeparatorComponent={ListSeparator}
+        keyExtractor={this._keyExtractor}
+        renderItem={this._renderItem}
       />
     );
   }
 }
+
+const styles = StyleSheet.create({
+
+})
