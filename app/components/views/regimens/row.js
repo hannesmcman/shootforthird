@@ -1,15 +1,15 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native'
-import type {RegimentType} from './types'
+import type {RegimenType} from './types'
 import * as c from '../../colors'
 
 type Props = {
-  regiment: RegimentType,
+  regimen: RegimenType,
 }
 
-export class RegimentsRow extends React.PureComponent<Props> {
+export class RegimensRow extends React.PureComponent<Props> {
   _onPress = () => {
-    this.props.onPressItem(this.props.regiment);
+    this.props.onPressItem(this.props.regimen);
   };
 
   componentDidMount() {
@@ -17,15 +17,15 @@ export class RegimentsRow extends React.PureComponent<Props> {
   }
 
   render() {
-    const {regiment} = this.props
+    const {regimen} = this.props
     return (
       <TouchableOpacity onPress={this._onPress}>
         <View style={styles.container}>
             <Text style={styles.title}>
-              {regiment.name}
+              {regimen.name}
             </Text>
             <Text style={styles.subtitle}>
-              {regiment.doctorAssigned ? regiment.doctor : null}
+              {regimen.doctorAssigned ? regimen.doctor : null}
             </Text>
         </View>
       </TouchableOpacity>
@@ -39,14 +39,13 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginTop: 20,
     marginBottom: 0,
-    padding: 6,
+    padding: 20,
     justifyContent: 'flex-start',
-    backgroundColor: c.mandarin,
+    backgroundColor: c.iceberg,
     borderRadius: 3,
   },
   title: {
     fontSize: 30,
-    color: 'white',
   },
   separator: {
     // height: 1,
@@ -55,7 +54,6 @@ const styles = StyleSheet.create({
   subtitle: {
     paddingTop: 5,
     fontSize: 15,
-    color: 'white',
   },
 })
 

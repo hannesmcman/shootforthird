@@ -6,7 +6,7 @@ type Props = {
   navigation: {state: {params: {exercise: ExerciseType}}},
 }
 
-export default class RegimentDetailView extends React.PureComponent<Props> {
+export default class RegimenDetailView extends React.PureComponent<Props> {
   static navigationOptions = ({navigation}: any) => {
     const exercise = navigation.state.params.exercise
     return {

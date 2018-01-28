@@ -1,17 +1,17 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native'
-import type {RegimentType} from '../types'
+import type {RegimenType} from '../types'
 import {ExercisesList} from './list'
 
 type Props = {
-  navigation: {state: {params: {regiment: RegimentType}}},
+  navigation: {state: {params: {regimen: RegimenType}}},
 }
 
-export default class RegimentDetailView extends React.PureComponent<Props> {
+export default class RegimenDetailView extends React.PureComponent<Props> {
   static navigationOptions = ({navigation}: any) => {
-    const regiment = navigation.state.params.regiment
+    const regimen = navigation.state.params.regimen
     return {
-      title: regiment.name,
+      title: regimen.name,
     }
   }
 
@@ -24,7 +24,7 @@ export default class RegimentDetailView extends React.PureComponent<Props> {
     return (
       <View style={styles.container}>
         <ExercisesList
-          data={ this.props.navigation.state.params.regiment.exercises }
+          data={ this.props.navigation.state.params.regimen.exercises }
           navigation={this.props.navigation}
         >
         </ExercisesList>

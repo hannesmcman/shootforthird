@@ -3,19 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen  from './app/components/views/home/home';
-import RegimentsScreen  from './app/components/views/regiments/regiments';
+import RegimensScreen  from './app/components/views/regimens/regimens';
 import MessengerScreen  from './app/components/views/messenger/messenger';
 import TrackerScreen  from './app/components/views/tracker/tracker';
-import RegimentDetailView from './app/components/views/regiments/regiment-detail'
-import ExerciseDetailView from './app/components/views/regiments/regiment-detail/exercise-detail'
+import RegimenDetailView from './app/components/views/regimens/regimen-detail'
+import ExerciseDetailView from './app/components/views/regimens/regimen-detail/exercise-detail'
 import ContactDetailView from './app/components/views/messenger/detail'
+import RegimenSearchView from './app/components/views/regimens/search/'
 
 const RootTabs = TabNavigator({
   Home: {
     screen: HomeScreen,
   },
-  Regiments: {
-    screen: RegimentsScreen,
+  Regimens: {
+    screen: RegimensScreen,
   },
   Tracker: {
     screen: TrackerScreen,
@@ -29,9 +30,10 @@ const RootTabs = TabNavigator({
 
 const BaseNav = StackNavigator({
   Home: { screen: RootTabs},
-  RegimentDetail: { screen: RegimentDetailView },
+  RegimenDetail: { screen: RegimenDetailView },
   ExerciseDetail: { screen: ExerciseDetailView },
   ContactDetail: { screen: ContactDetailView },
+  RegimenSearchView: { screen: RegimenSearchView },
 })
 
 

@@ -1,6 +1,6 @@
 
 
-export type RegimentType = {
+export type RegimenType = {
   name: string,
   doctorAssigned: boolean,
   doctor?: string,
