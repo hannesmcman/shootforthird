@@ -1,23 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeScreen  from './app/components/home/home';
+import RegimentsScreen  from './app/components/regiments/regiments';
+import MessengerScreen  from './app/components/messenger/messenger';
+import TrackerScreen  from './app/components/tracker/tracker';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const RootTabs = TabNavigator({
+  Home: {
+    screen: HomeScreen,
+  },
+  Regiments: {
+    screen: RegimentsScreen,
+  },
+  Tracker: {
+    screen: TrackerScreen,
+  },
+  Messenger: {
+    screen: MessengerScreen,
   },
 });
+
+
+export default RootTabs;
