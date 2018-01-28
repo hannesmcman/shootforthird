@@ -1,11 +1,18 @@
 import React from 'react'
-import {View, Text, Button} from 'react-native'
+import {View, Text, Button, StyleSheet} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {RegimentsList} from './list'
+import * as defaultData from '../../../../docs/regiments.json'
+import type {RegimentType} from './types'
 
-export default class RegimentsScreen extends React.Component {
+type State = {
+  regiments: Array<RegimentType>,
+}
+
+export default class RegimentsScreen extends React.Component<State> {
   static navigationOptions = {
-    headerRight: <Button title="info" onPress={() => {}}/>,
+    title: "Regiments",
+    headerRight: <Button title="+" onPress={() => {}}/>,
     tabBarLabel: 'Regiments',
     tabBarIcon: ({ tintColor, focused }) => (
       <Ionicons
@@ -16,20 +23,19 @@ export default class RegimentsScreen extends React.Component {
     ),
   };
 
+  state = {
+    regiments: defaultData.data,
+  }
+
   componentDidMount() {
-    console.log(this.props)
+    // console.log(this.state.regiments)
   }
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <RegimentsList
-          data={
-            [
-              {name: 'Sprained Ankle'},
-              {name: 'Tendonitis'},
-            ]
-          }
+          data={ this.state.regiments }
           navigation={this.props.navigation}
         >
         </RegimentsList>
@@ -37,3 +43,10 @@ export default class RegimentsScreen extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+})

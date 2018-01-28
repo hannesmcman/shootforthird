@@ -6,7 +6,8 @@ import HomeScreen  from './app/components/views/home/home';
 import RegimentsScreen  from './app/components/views/regiments/regiments';
 import MessengerScreen  from './app/components/views/messenger/messenger';
 import TrackerScreen  from './app/components/views/tracker/tracker';
-import RegimentDetailView from './app/components/views/regiments/detail'
+import RegimentDetailView from './app/components/views/regiments/regiment-detail'
+import ExerciseDetailView from './app/components/views/regiments/regiment-detail/exercise-detail'
 import ContactDetailView from './app/components/views/messenger/detail'
 
 const RootTabs = TabNavigator({
@@ -29,6 +30,7 @@ const RootTabs = TabNavigator({
 const BaseNav = StackNavigator({
   Home: { screen: RootTabs},
   RegimentDetail: { screen: RegimentDetailView },
+  ExerciseDetail: { screen: ExerciseDetailView },
   ContactDetail: { screen: ContactDetailView },
 })
 
