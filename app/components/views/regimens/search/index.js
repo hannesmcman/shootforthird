@@ -2,7 +2,7 @@ import React from 'react'
 import { TouchableHighlight, Text, View, StyleSheet, FlatList } from 'react-native'
 // import {AtoZListView} from 'react-native-atoz-listview'
 import Search from 'react-native-search-box'
-import * as defaultData from '../../../../../docs/regimens.json'
+import * as searchData from '../../../../../docs/searchable-regimens.json'
 import {RegimensSearchList} from './list'
 import * as c from '../../../colors'
 import type {RegimenType} from '../types'
@@ -31,7 +31,7 @@ export default class RegimenSearchView extends React.PureComponent<State> {
 
   state = {
     results: [],
-    allRegimens: defaultData.data,
+    allRegimens: searchData.data,
   }
 
   componentDidMount() {
