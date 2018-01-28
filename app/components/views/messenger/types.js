@@ -1,6 +1,4 @@
-
-
-export type RegimentType = {
+export type ContactType = {
   name: string,
   doctorAssigned: boolean,
   doctor?: string,

@@ -1,12 +1,12 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native'
-import type {RegimentType} from './types'
+import type {ContactList} from './types'
 
 type Props = {
-  regiment: RegimentType,
+  contact: ContactType,
 }
 
-export class RegimentsRow extends React.PureComponent<Props> {
+export class ContactRow extends React.PureComponent<Props> {
   _onPress = () => {
     this.props.onPressItem(this.props.info);
   };

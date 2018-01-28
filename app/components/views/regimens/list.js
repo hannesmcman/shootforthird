@@ -1,32 +1,32 @@
 import React from 'react'
 import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native'
-import {RegimentsRow, ListSeparator} from './row'
+import {RegimensRow, ListSeparator} from './row'
 import type {TopLevelViewPropsType} from '../../types'
-import type {RegimentType} from './types'
+import type {RegimenType} from './types'
 
 type Props = TopLevelViewPropsType & {
-  data: Array<RegimentType>,
+  data: Array<RegimenType>,
 }
 
-export class RegimentsList extends React.PureComponent<Props> {
+export class RegimensList extends React.PureComponent<Props> {
 
   _keyExtractor = (item, index) => item.id;
 
-  _onPressItem = (regiment: RegimentType) => {
+  _onPressItem = (regimen: RegimenType) => {
     // updater functions are preferred for transactional updates
-    this.props.navigation.navigate('RegimentDetail', {regiment: regiment})
+    this.props.navigation.navigate('RegimenDetail', {regimen: regimen})
   };
 
-  _renderItem = ({item}: {item: RegimentType}) => (
-    <RegimentsRow
-      info={item}
+  _renderItem = ({item}: {item: RegimenType}) => (
+    <RegimensRow
+      regimen={item}
       onPressItem={this._onPressItem}
       title={item.name}
     />
   );
 
   componentDidMount() {
-    // console.log(this.props)
+    console.log(this.props)
   }
 
   render() {
