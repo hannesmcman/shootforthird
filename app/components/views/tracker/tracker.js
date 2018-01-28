@@ -19,8 +19,18 @@ export default class TrackerScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ paddingTop: 50, flex: 1 }}>
-        <Calendar
+      <View style={{ flex: 1 }}>
+        <CalendarList
+          // Callback which gets executed when visible months change in scroll view. Default = undefined
+          onVisibleMonthsChange={(months) => {console.log('now these months are visible', months);}}
+          // Max amount of months allowed to scroll to the past. Default = 50
+          pastScrollRange={50}
+          // Max amount of months allowed to scroll to the future. Default = 50
+          futureScrollRange={50}
+          // Enable or disable scrolling of calendar list
+          scrollEnabled={true}
+          // Enable or disable vertical scroll indicator. Default = false
+          showScrollIndicator={false}
           // Handler which gets executed on day press. Default = undefined
           onDayPress={(day) => {console.log('selected day', day)}}
           // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
@@ -41,7 +51,27 @@ export default class TrackerScreen extends React.Component {
           hideDayNames={false}
           // Show week numbers to the left. Default = false
           showWeekNumbers={false}
-        />
+          // Collection of dates that have to be marked. Default = {}
+          markedDates={{
+            //'2018-01-16': {selected: true, marked: true, dotColor: 'green'},
+            '2018-01-04': {marked: true, dotColor: 'green'},
+            '2018-01-05': {marked: true, dotColor: 'orange'},
+            '2018-01-08': {marked: true, dotColor: 'green'},
+            '2018-01-09': {marked: true, dotColor: 'orange'},
+            '2018-01-10': {marked: true, dotColor: 'green'},
+            '2018-01-12': {marked: true, dotColor: 'green'},
+            '2018-01-14': {marked: true, dotColor: 'green'},
+            '2018-01-15': {marked: true, dotColor: 'green'},
+            '2018-01-16': {marked: true, dotColor: 'green'},
+            '2018-01-18': {marked: true, dotColor: 'orange'},
+            '2018-01-19': {marked: true, dotColor: 'green'},
+            '2018-01-20': {marked: true, dotColor: 'green'},
+            '2018-01-22': {marked: true, dotColor: 'orange'},
+            '2018-01-23': {marked: true, dotColor: 'green'},
+            '2018-01-24': {marked: true, dotColor: 'orange'},
+            '2018-01-25': {marked: true, dotColor: 'green'},
+          }}
+        />  
       </View>
     );
   }
