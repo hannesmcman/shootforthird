@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
    }
 
   state = {
-      progress: 0
+      progress: 20
    }
 
   _onPressButton() {
@@ -47,7 +47,7 @@ export default class HomeScreen extends React.Component {
             borderWidth={8}
             color="#3399FF"
             shadowColor="#999"
-            bgColor="#fff"
+            bgColor={c.platinum}
           >
             <Text style={{ fontSize: 18 }}>{this.state.progress} %</Text>
         </ProgressCircle>
@@ -61,7 +61,7 @@ export default class HomeScreen extends React.Component {
           <View style={{width: 100, height: 100, backgroundColor: c.iceberg}}>
             <Text style={styles.box}>Physician</Text>
           </View>
-          <View style={{width: 100, height: 100, backgroundColor: c.platinum}}>
+          <View style={{width: 100, height: 100, backgroundColor: c.linen}}>
             <Text style={styles.box}>Time</Text>
           </View>
           <View style={{width: 100, height: 100, backgroundColor: c.iceberg}}>
@@ -82,7 +82,8 @@ const styles = StyleSheet.create({
    flex: 1,
    paddingTop: 30,
    // justifyContent: 'center',
-   alignItems: 'center'
+   alignItems: 'center',
+   backgroundColor: c.platinum,
   },
   boxes: {
    flex: 1,
